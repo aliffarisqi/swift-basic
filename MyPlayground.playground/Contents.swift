@@ -24,3 +24,9 @@ let keliling = 12 //kompiler secara otomatis menentukan tipe data
 let phi = 3.14 //swift akan memilih double dibanding float
 
 let kelilingPhi = 12 + 3.14 // maka tipe akan menjadi double
+
+//tuple
+let httpError = (404, "Not Found")
+print(httpError)
+let (statusCode, statusMessage) = httpError
+print(statusCode)
