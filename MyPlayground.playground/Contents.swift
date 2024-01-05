@@ -18,3 +18,9 @@ print(nama+alamat)
 let apple = 2.4
 let banana: Double = 3.0 //64bit
 let melon:Float = 5.4 //32bit
+
+//type inference
+let keliling = 12 //kompiler secara otomatis menentukan tipe data
+let phi = 3.14 //swift akan memilih double dibanding float
+
+let kelilingPhi = 12 + 3.14 // maka tipe akan menjadi double
