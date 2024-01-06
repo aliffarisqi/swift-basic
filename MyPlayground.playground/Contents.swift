@@ -68,4 +68,29 @@ for (index, mahasiswa) in arrayMahasiswa.enumerated(){
     print(mahasiswa)
 }
 
+//SET
+var kalimat = Set<Character>()
+kalimat.insert("s")
+print(kalimat)
 
+var riwayatFilm: Set<String> = ["avatar", "upin-ipin", "unyil"]
+print(riwayatFilm)
+riwayatFilm.insert("marvels")
+print(riwayatFilm)
+
+let oddDigits: Set = [1, 3, 5, 7, 9, 10]
+let evenDigits: Set = [0, 2, 2, 4, 4, 6, 8, 10]
+let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
+
+print(oddDigits.union(evenDigits).sorted())
+print(oddDigits.intersection(evenDigits).sorted())
+print(oddDigits.subtracting(evenDigits).sorted())
+print(oddDigits.symmetricDifference(evenDigits).sorted())
+
+let houseAnimals: Set = ["dog", "cat"]
+let farmAnimals: Set = ["cow", "chicken", "goat", "dog", "cat"]
+let cityAnimals: Set = ["bird", "mouse"]
+
+print(houseAnimals.isSubset(of: farmAnimals))
+print(farmAnimals.isSuperset(of: houseAnimals))
+print(farmAnimals.isDisjoint(with: cityAnimals))
