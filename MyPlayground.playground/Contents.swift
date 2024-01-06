@@ -94,3 +94,25 @@ let cityAnimals: Set = ["bird", "mouse"]
 print(houseAnimals.isSubset(of: farmAnimals))
 print(farmAnimals.isSuperset(of: houseAnimals))
 print(farmAnimals.isDisjoint(with: cityAnimals))
+
+//dictionary
+//dictionary kosong
+var nameofString = [Int: String]() //[key, value]
+nameofString[1] = "satu"
+nameofString[2] = "dua"
+
+var clubFootball: [String: String] = ["fcb":"barcelona", "rm":"real madrid"]
+
+print(clubFootball)
+clubFootball["fcb"] = "manchester"
+print(clubFootball)
+clubFootball["mu"] = "manchester"
+print(clubFootball)
+
+for(codeCLub, namaCLub) in clubFootball{
+    print("kode club: \(codeCLub) dan nama club :\(namaCLub)")
+}
+//mendapatkan kodenya saja
+for codeClub in clubFootball.keys{
+    print("kode club: \(codeClub)")
+}
