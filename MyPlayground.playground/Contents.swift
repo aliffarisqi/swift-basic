@@ -178,3 +178,69 @@ func greetGuard(person :[String:String]){
 greetGuard(person: ["name" : "bayu", "location":"tegal"])
 
 
+//function
+func sayHelloWord(){
+    print("hello word")
+}
+sayHelloWord()
+
+func sayHwlloWordReturn()-> String {
+    return "hello world return"
+}
+print(sayHwlloWordReturn())
+
+func greet(name: String, age: Int?)-> String{
+    guard let umur = age else{
+        return "hello " + name
+    }
+    return "Hello \(name), you are \(umur) years old."
+}
+
+let greetings = greet(name: "bayu", age: nil)
+print(greetings)
+
+
+//function multiple return
+func minMax(array: [Int]) -> (min: Int, max: Int)? {
+    
+    if array.isEmpty { return nil }
+    
+   var currentMin = array[0]
+   var currentMax = array[0]
+   for value in array[1..<array.count] {
+       if value < currentMin {
+           currentMin = value
+       } else if value > currentMax {
+           currentMax = value
+       }
+   }
+   return (currentMin, currentMax)
+}
+if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
+   print("min is \(bounds.min) and max is \(bounds.max).")
+}
+if let emptyBound = minMax(array: []) {
+   print("min is \(emptyBound.min) and max is \(emptyBound.max).")
+} else {
+   print("emptyBound is empty.")
+}
+
+//variasi function
+func greetVariation(person: String, from address: String)-> String {
+    return "Hello \(person)!  Glad you could visit from \(address)."
+}
+
+print(greetVariation(person: "bayu", from: "tegal"))
+
+//variadic function
+func arithmeticMean(_ numbers: Double...) -> Double {
+   var total: Double = 0
+   for number in numbers {
+       total += number
+   }
+   return total / Double(numbers.count)
+}
+arithmeticMean(1, 2, 3, 4, 5)
+// mengembalikan nilai 3.0, yang merupakan rata-rata aritmatika dari lima angka
+arithmeticMean(3, 8.25, 18.75)
+// mengembalikan nilai 10.0, yang merupakan rata-rata aritmatika dari tiga angka
