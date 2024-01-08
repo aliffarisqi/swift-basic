@@ -116,3 +116,65 @@ for(codeCLub, namaCLub) in clubFootball{
 for codeClub in clubFootball.keys{
     print("kode club: \(codeClub)")
 }
+
+//sorted dictionary
+let jumlahKakiSerangga = ["semut": 6, "laba-laba":8,"belalang":4]
+let sortedByJumlahKaki = jumlahKakiSerangga.sorted{$0.value < $1.value}
+for (namaSerangga, jumlahKaki) in sortedByJumlahKaki{
+    print("jumlahkaki \(namaSerangga) adalah \(jumlahKaki)")
+}
+
+//ular tangga
+let finalSquare = 25
+var board = [Int](repeating :0, count: finalSquare + 1)
+print("board saat ini : \(board)")
+board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02 // Tangga
+board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08 // Ular
+
+print("Nilai board saat ini: \(board)")
+print("board saat ini : \(board)")
+
+var square = 0
+
+
+while square < finalSquare{
+//    diceRoll += 1
+//    if diceRoll == 7 {diceRoll == 1}
+    
+    var diceRoll = Int.random(in: 1...6)
+    square += diceRoll
+    
+    if square < board.count{
+        square += board[square]
+    }
+    print(square)
+}
+
+print("FINSIAH!")
+
+let puzzleInput = "great minds think alike"
+var puzzleOutput = ""
+let charactersToRemove: [Character] = ["a", "e", "i", "o", "u", " "]
+for character in puzzleInput {
+   if charactersToRemove.contains(character) {
+       continue
+   }
+   puzzleOutput.append(character)
+}
+print(puzzleOutput)
+
+//GUARD
+func greetGuard(person :[String:String]){
+    guard let name = person["name"] else{
+        return
+    }
+    print("Hello \(name)!")
+    guard let location = person["location"] else {
+           print("I hope the weather is nice near you.")
+           return
+       }
+    print("I hope the weather is nice in \(location).")
+}
+greetGuard(person: ["name" : "bayu", "location":"tegal"])
+
+
