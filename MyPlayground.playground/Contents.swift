@@ -244,3 +244,17 @@ arithmeticMean(1, 2, 3, 4, 5)
 // mengembalikan nilai 3.0, yang merupakan rata-rata aritmatika dari lima angka
 arithmeticMean(3, 8.25, 18.75)
 // mengembalikan nilai 10.0, yang merupakan rata-rata aritmatika dari tiga angka
+
+
+//Clousure Expression
+let names = ["Gilang", "Alex", "Dimas", "Arif", "Ahmad"]
+func backwardExpression(_ s1: String, _ s2: String) -> Bool {
+   return s1 > s2
+}
+var reversedNames = names.sorted(by: backwardExpression)
+print(reversedNames)
+
+//Clousure expression versi singkat
+var reversedNames2 = names.sorted(by: >)
+print(reversedNames2)
+
