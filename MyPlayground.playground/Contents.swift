@@ -138,8 +138,8 @@ var square = 0
 
 
 while square < finalSquare{
-//    diceRoll += 1
-//    if diceRoll == 7 {diceRoll == 1}
+    //    diceRoll += 1
+    //    if diceRoll == 7 {diceRoll == 1}
     
     var diceRoll = Int.random(in: 1...6)
     square += diceRoll
@@ -156,10 +156,10 @@ let puzzleInput = "great minds think alike"
 var puzzleOutput = ""
 let charactersToRemove: [Character] = ["a", "e", "i", "o", "u", " "]
 for character in puzzleInput {
-   if charactersToRemove.contains(character) {
-       continue
-   }
-   puzzleOutput.append(character)
+    if charactersToRemove.contains(character) {
+        continue
+    }
+    puzzleOutput.append(character)
 }
 print(puzzleOutput)
 
@@ -170,9 +170,9 @@ func greetGuard(person :[String:String]){
     }
     print("Hello \(name)!")
     guard let location = person["location"] else {
-           print("I hope the weather is nice near you.")
-           return
-       }
+        print("I hope the weather is nice near you.")
+        return
+    }
     print("I hope the weather is nice in \(location).")
 }
 greetGuard(person: ["name" : "bayu", "location":"tegal"])
@@ -205,24 +205,24 @@ func minMax(array: [Int]) -> (min: Int, max: Int)? {
     
     if array.isEmpty { return nil }
     
-   var currentMin = array[0]
-   var currentMax = array[0]
-   for value in array[1..<array.count] {
-       if value < currentMin {
-           currentMin = value
-       } else if value > currentMax {
-           currentMax = value
-       }
-   }
-   return (currentMin, currentMax)
+    var currentMin = array[0]
+    var currentMax = array[0]
+    for value in array[1..<array.count] {
+        if value < currentMin {
+            currentMin = value
+        } else if value > currentMax {
+            currentMax = value
+        }
+    }
+    return (currentMin, currentMax)
 }
 if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
-   print("min is \(bounds.min) and max is \(bounds.max).")
+    print("min is \(bounds.min) and max is \(bounds.max).")
 }
 if let emptyBound = minMax(array: []) {
-   print("min is \(emptyBound.min) and max is \(emptyBound.max).")
+    print("min is \(emptyBound.min) and max is \(emptyBound.max).")
 } else {
-   print("emptyBound is empty.")
+    print("emptyBound is empty.")
 }
 
 //variasi function
@@ -234,11 +234,11 @@ print(greetVariation(person: "bayu", from: "tegal"))
 
 //variadic function
 func arithmeticMean(_ numbers: Double...) -> Double {
-   var total: Double = 0
-   for number in numbers {
-       total += number
-   }
-   return total / Double(numbers.count)
+    var total: Double = 0
+    for number in numbers {
+        total += number
+    }
+    return total / Double(numbers.count)
 }
 arithmeticMean(1, 2, 3, 4, 5)
 // mengembalikan nilai 3.0, yang merupakan rata-rata aritmatika dari lima angka
@@ -249,7 +249,7 @@ arithmeticMean(3, 8.25, 18.75)
 //Clousure Expression
 let names = ["Gilang", "Alex", "Dimas", "Arif", "Ahmad"]
 func backwardExpression(_ s1: String, _ s2: String) -> Bool {
-   return s1 > s2
+    return s1 > s2
 }
 var reversedNames = names.sorted(by: backwardExpression)
 print(reversedNames)
@@ -279,3 +279,32 @@ print(incrementBySeven())
 
 print(incrementByTen())
 print(incrementBySeven())
+
+
+// MARK: ENUMERATION
+enum CompasPoint {
+    case north
+    case west
+    case east
+    case south
+    case center
+}
+
+var directionToHead = CompasPoint.west
+
+directionToHead = .west
+print(directionToHead)
+
+// MARK: match enum with switch
+switch directionToHead {
+case .east:
+    print("melihat matahari terbit")
+case .south:
+    print("melihat pantai selatan")
+case .north:
+    print("melihat pantai utara")
+case .west:
+    print("melihat matahari terbenam")
+default:
+    print("tidak kemana mana")
+}
