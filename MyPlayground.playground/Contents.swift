@@ -257,6 +257,8 @@ print(reversedNames)
 //Clousure expression versi singkat
 var reversedNames2 = names.sorted(by: >)
 print(reversedNames2)
+// Clousure trailing
+var reversedNames3 = names.sorted { $0 > $1 }
 
 //Clousure Capturing value
 func makeIncrement(forIncrement amount: Int)-> ()-> Int {
