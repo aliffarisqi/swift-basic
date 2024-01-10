@@ -191,3 +191,12 @@ struct PointEmpat {
         self = PointEmpat(x: x + deltaX, y: y + deltaY)
     }
 }
+
+//MARK: Type Methods
+class SomeClassSatu{
+    static func someTypedFunc(){
+        print("type methods")
+    }
+}
+SomeClassSatu.someTypedFunc()
+
