@@ -121,3 +121,35 @@ stepCounter.totalSteps = 50
 stepCounter.totalSteps = 150
 
 stepCounter.totalSteps = 420
+
+
+//MARK: Methods
+class Counter{
+    //attribute / properti
+    var count = 0
+    
+    //methods
+    func increment(){
+        count += 1
+    }
+    
+    //methods
+    func incrementBy(amount: Int){
+        count += amount
+    }
+    
+    //methods
+    func reset(){
+        count = 0
+    }
+}
+
+let counter = Counter()
+
+counter.increment()
+print("nilai count saat ini : \(counter.count)")
+counter.incrementBy(amount: 4)
+print("nilai count saat ini : \(counter.count)")
+counter.reset()
+print("nilai count saat ini : \(counter.count)")
+
