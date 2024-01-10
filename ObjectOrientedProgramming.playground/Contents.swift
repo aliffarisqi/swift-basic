@@ -163,7 +163,19 @@ struct PointDua {
         return self.x > x
     }
 }
-let somePoint = Point(x: 4.0, y: 5.0)
+let somePoint = PointDua(x: 4.0, y: 5.0)
 if somePoint.isToTheRightOf(x: 1.0) {
    print("This point is to the right of the line where x == 1.0")
 }
+
+//MARK: Modifying Value Types
+struct PointTiga {
+    var x = 0.0, y = 0.0
+    mutating func moveBy(x deltaX: Double, y deltaY: Double){
+        x += deltaX
+        y += deltaY
+    }
+}
+var somePointTiga = PointTiga(x: 1.0, y: 1.0)
+somePointTiga.moveBy(x: 2.0, y: 3.0)
+print("The point is now at (\(somePointTiga.x), \(somePointTiga.y))")
