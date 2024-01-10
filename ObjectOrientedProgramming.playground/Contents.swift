@@ -153,3 +153,17 @@ print("nilai count saat ini : \(counter.count)")
 counter.reset()
 print("nilai count saat ini : \(counter.count)")
 
+
+// MARK: Self pada class atau struct
+// digunakan untuk membedakan nama parameter dan nama properti
+
+struct PointDua {
+    var x = 0.0, y = 0.0
+    func isToTheRightOf(x: Double) -> Bool {
+        return self.x > x
+    }
+}
+let somePoint = Point(x: 4.0, y: 5.0)
+if somePoint.isToTheRightOf(x: 1.0) {
+   print("This point is to the right of the line where x == 1.0")
+}
