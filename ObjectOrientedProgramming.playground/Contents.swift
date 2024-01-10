@@ -200,3 +200,12 @@ class SomeClassSatu{
 }
 SomeClassSatu.someTypedFunc()
 
+//MARK: Instance methods
+class SomeClassDua{
+    func someInstanceMethods(){
+        print("instance methods")
+    }
+}
+
+var someClassInstance = SomeClassDua()
+someClassInstance.someInstanceMethods()
