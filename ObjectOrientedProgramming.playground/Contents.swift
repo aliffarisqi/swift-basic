@@ -179,3 +179,15 @@ struct PointTiga {
 var somePointTiga = PointTiga(x: 1.0, y: 1.0)
 somePointTiga.moveBy(x: 2.0, y: 3.0)
 print("The point is now at (\(somePointTiga.x), \(somePointTiga.y))")
+
+let fixedPoint = PointTiga(x: 3.0, y: 3.0)
+//fixedPoint.moveBy(x: 2.0, y: 3.0) (ERROR karena konstanta structure)
+
+//MARK: Assigning to self Within a Mutating Method
+// metode ini sama dengan sebelumnya
+struct PointEmpat {
+    var x = 0.0, y = 0.0
+    mutating func moveBy(x deltaX: Double, y deltaY: Double){
+        self = PointEmpat(x: x + deltaX, y: y + deltaY)
+    }
+}
